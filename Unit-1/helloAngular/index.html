@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			{{ greeting }} World
+		</title>
+	</head>
+	<body>
+		<p>{{1 + 6}}<p>
+		<p> 1 + 2 = {{ 1 + 2 }}</p>
+		<p>My name is {{ " BoJack" + " Horseman" }}</p>
+		<p>The array [ 99, 43, 22] is {{ [ 99, 43, 22].length }} items long</p>
+		{{ 3.14159265359 | currency:"€" }} <br></br>
+		{{ 3.14159265359 | number: 3 }}<br></br>
+		{{ 3.14159265359 | number: 6 }}<br></br>
+		{{ 3.14159265359 | number: 1 }}<br></br>
+		{{ 3.14159265359 | number: 0 }}<br></br>
+
+		<h2>How many digits of pi do you want?
+		<select np-pluralize="num">
+			<option value="{{ 3.14159265359 | number: 3 }}">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option></h3>
+		</select>
+		<h3>Here you go! The first {{ num }} digit of pi!</h3>
+		{{ num }}
+
+		<p>Say Something</p>
+		<input ng-model="allCaps" type="text" placeholder="Say something">
+		<h2>Yelling:{{ allCaps | uppercase }}</h2>
+		<h3>Whispering:{{ allCaps | lowercase }}</h3>
+
+		<p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"</p>
+		<p>{{ greeting }}world!</p>
+
+		<input ng-model="name" type="text" placeholder="What is your name?">
+		<h1>My name is: {{ name }}</h1>
+
+		<select ng-model="select">
+			<option value=" Dogs <3">Dogs</option>
+			<option value=" Cats <3">Cats</option>
+			<option value=" Dogs & Cats <3">Dogs & Cats</option>
+			</select>
+		<h3>I LOVE{{ select }}</h3>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</body>
+</html>
