@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+</head>
+<body ng-app>
+	<form>
+		<label for="boyName">Boy's name</label><br>
+		<input type="text" ng-model="boyName" id="boyName" placeholder="Enter Boy's name...">
+        <br>
+        <br>
+
+		<label for="adj">Adjective</label><br>
+		<input type="text" ng-model="adj" id="adj" placeholder="Enter an adjective...">
+		<br>
+		<br>
+
+		<label for="pluralN">Plural Noun</label><br>
+		<input type="text" ng-model="pluralN" id="pluralN" placeholder="Enter a plural noun...">
+		<br>
+		<br>
+
+		<label for="insect">An Insect, plural</label><br>
+		<input type="text" ng-model="insect" id="insect" placeholder="Enter an Insect, plural...">
+		<br>
+
+		<button ng-click='myValue=true'>Generate!</button>
+	</form>
+
+
+	<h3 ng-show='myValue' ng-init='myValue=false'>I'm in love with <span>{{boyName}}</span>. He's so <span>{{adj}}</span>! He has big flat <span>{{pluralN}}</span>, and when our <span>{{insect}}</span></h3>
+
+	<button ng-click="boyName=''; adj='' ; pluralN=''; insect=''" >Play Again?</button>
+
+
+</body>
+</html>
