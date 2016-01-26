@@ -1,7 +1,21 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myapp">
 	<head>
 		<meta charset="utf-8">
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+		<script> 
+			angular.module("myapp", []).controller("Ctrl", function($scope){
+			$scope.names = 
+			[
+				{name: "Harry"} , 
+				{name: "Ron"}, 
+				{name: "Hermione"}, 
+				{name: "Sirious"}, 
+				{name: "Hedwig"}, 
+				{name: "Tonks"}
+			]});
+		</script>
 		<title>
 			{{ greeting }} World
 		</title>
@@ -43,9 +57,43 @@
 			<option value=" Dogs <3">Dogs</option>
 			<option value=" Cats <3">Cats</option>
 			<option value=" Dogs & Cats <3">Dogs & Cats</option>
-			</select>
+		</select>
 		<h3>I LOVE{{ select }}</h3>
+
 		
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<div ng-controller="Ctrl">
+		<ul>
+			<li ng-repeat="name in names">
+				{{ name }}
+			</li>
+		</ul>
+		</div>
+		
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
