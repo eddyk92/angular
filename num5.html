@@ -48,5 +48,15 @@
         3 + 4 is 7, do hide
       </div>
 
+    <h1>Sign Up page</h1>
+    	<input ng-model="signUp" type="password" maxlength="10"><br/>
+    	<span>Your password is {{signUp.length}} characters</span><br/>
+
+        <p ng-show="signUp.length < 6">Password is Invalid!</p>
+
+    	<button ng-show="signUp.length > 5">
+    		Sign Up!
+    	</button><br/>
+    	
 </body>
 </html>
