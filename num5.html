@@ -5,6 +5,15 @@
 
 <head>
 	<title></title>
+	<style>
+      .invalid {
+      	color: red;
+      }
+
+      .valid {
+      	color: green;
+      }
+	</style>
 </head>
 <body>
     
@@ -58,5 +67,15 @@
     		Sign Up!
     	</button><br/>
     	
+    	<h1>Sign Up page w/ Color</h1>
+    	   
+    		<input ng-class="signUp2.length <= 5 ? 'invalid' : 'valid'" color="red" ng-model="signUp2" type="password" maxlength="10"><br/>
+    		<span>Your password is {{signUp.length}} characters</span><br/>
+
+    	    <p ng-class="signUp2.length <= 5 ? 'invalid' : 'valid'" ng-show="signUp2.length < 6">Password is Invalid!</p>
+
+    		<button style="color:green;" ng-show="signUp2.length > 5">
+    			Sign Up!
+    		</button><br/>
 </body>
 </html>
