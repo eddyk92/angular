@@ -7,27 +7,46 @@
 	<title></title>
 </head>
 <body>
+    
+    <h1>Symbols</h1>
+		<div ng-init="symbols=['&spades;', '&clubs;', '&hearts;', '&diams;']">
+			<ul>
+				<li ng-repeat="symbol in symbols">
+					{{symbol}}
+				</li>
+			</ul>
+			
+		</div>
+    
+    <h1>Duplicates</h1>
 
-	<div ng-init="symbols=['&spades;', '&clubs;', '&hearts;', '&diams;']">
-		<ul>
-			<li ng-repeat="symbol in symbols">
-				{{symbol}}
-			</li>
-		</ul>
-		
-	</div>
+		<div ng-init="duplicates=[1,1,2,5,6,9,9,9]">
+			<ul>
+				<li ng-repeat="duplicate in duplicates track by $index">
+			
+					{{duplicate}}
+			
+				</li>
+			</ul>
+			
+		</div>
 
-	<div ng-init="duplicates=[1,1,2,5,6,9,9,9]">
-		<ul>
-			<li ng-repeat="duplicate in duplicates track by $index">
-		
-				{{duplicate}}
-		
-			</li>
-		</ul>
-		
-	</div>
+	<h1>Show and Hide</h1>
+      <div ng-show='3 + 4 == 5'>
+        3 + 4 isn't 5, don't show
+      </div>
 
+      <div ng-show='3 + 4 == 7'>
+        3 + 4 is 7, do show
+      </div>
+
+      <div ng-hide='3 + 4 == 5'>
+          3 + 4 isn't 5, don't hide
+      </div>
+
+      <div ng-hide='3 + 4 == 7'>
+        3 + 4 is 7, do hide
+      </div>
 
 </body>
 </html>
