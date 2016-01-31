@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js'></script>
+</head>
+<body ng-app>
+	<h1>Super Useful Tip Calculator</h1>
+	<div>How much did your meal cost?</div>
+	<input type="text" ng-model='mealTotal' ng-init='mealTotal="0"'>
+    
+    <p>How much do you want to tip?</p>
+    <select ng-model="tip" ng-init='tip="0.10"'>
+      <option value='0.10'>10%</option>
+      <option value='0.15'>15%</option>
+      <option value='0.20'>20%</option>      
+    </select>
+    <h2>Tip Percent: {{ tip }}%</h2>
+    
+    <h2>Subtotal: {{ mealTotal }}</h2>
+    <h2>Total: {{ mealTotal * tip | currency }}</h2>
+
+</body>
+</html>

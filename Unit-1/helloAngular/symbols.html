@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="redBall">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+	<script src="./app.js"></script>
+	<link rel="stylesheet" type="text/css" href="symbols.css">
+	<title></title>
+</head>
+<body>
+	<ul ng-controller="shapes">
+		<li ng-repeat="symbol in symbols">
+				{{ symbol }}
+		</li>
+		<li>&spades;</li>
+
+	</ul>
+
+	<div ng-controller="dups">
+		<h3>Basic example of iterating through an array with duplicates </h3>
+		<p ng-repeat="num in nums track by $index">
+			{{ nums }}
+		</p>
+	</div>
+
+	<div ng-show="3+4 == 5">
+		3 + 4 isn't 5, don't show
+	</div>
+	<div ng-show="3+3 == 6">
+		3 + 3 is 6, do show
+	</div>
+	<div ng-hide="3 + 4 == 5">
+		3 + 4 isn't 5, don't hide
+	</div>
+	<div ng-hide="3+4 == 7">
+		3 + 4 is 7, do hide
+	</div>
+
+	<div ng-controller="signUp">
+		<h1>Sign Up page</h1>  
+		<input ng-model="signUp" maxlength="10" type="password" placeholder="Make a password"><br></br>
+		<span>Your password is showing {{signUp.length}} characters</span><br></br>
+		<button ng-show="signUp.length >6">Sign Up!</button>
+		<p ng-show="signUp.length <7">Password is invalid!</p>
+	</div>
+
+<!-- change color -->
+<!-- 	<div ng-controller="signUp">
+		<h1>Sign Up page</h1>
+		<input ng-model="signUp" maxlength="10" type="password" placeholder="Make a password"><br></br>
+		<span>Your password is showing {{signUp.length}} characters</span><br></br>
+		<button ng-show="signUp.length >6">Sign Up!</button>
+		<p ng-class="red:past == 'true'" ng-show="signUp.length <7">Password is invalid!</p>
+	</div> -->
+
+	<div ng-controller="camera">
+		<h1>Camera Shop</h1>
+		<!-- <select ng-model="item in cameraList" | order.By: 'price'">  -->
+		<select ng-model="sortOrder"> 
+			<option value="price">price</option>
+			<option value="-rating">rating</option>
+		</select>
+		<!-- {{sort}} -->
+		<div ng-repeat="item in cameraList | orderBy: sortOrder ">
+			<ul>
+
+				<li> 
+					{{ item.title}},
+					{{ item.rating}},
+					{{ item.price}},
+					{{ item.onSale}}
+				</li>
+
+			</ul>
+			<!-- ng-repeat that goes over each item in sort, and logs out that item's info -->
+
+		</div>
+	</div>
+
+ 
+
+</body>
+</html>
+

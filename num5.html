@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+	<script src="./app.js"></script>
+
+<head>
+	<title></title>
+	<style>
+      .invalid {
+      	color: red;
+      }
+
+      .valid {
+      	color: green;
+      }
+	</style>
+</head>
+<body>
+    
+    <h1>Symbols</h1>
+		<div ng-init="symbols=['&spades;', '&clubs;', '&hearts;', '&diams;']">
+			<ul>
+				<li ng-repeat="symbol in symbols">
+					{{symbol}}
+				</li>
+			</ul>
+			
+		</div>
+    
+    <h1>Duplicates</h1>
+
+		<div ng-init="duplicates=[1,1,2,5,6,9,9,9]">
+			<ul>
+				<li ng-repeat="duplicate in duplicates track by $index">
+			
+					{{duplicate}}
+			
+				</li>
+			</ul>
+			
+		</div>
+
+	<h1>Show and Hide</h1>
+      <div ng-show='3 + 4 == 5'>
+        3 + 4 isn't 5, don't show
+      </div>
+
+      <div ng-show='3 + 4 == 7'>
+        3 + 4 is 7, do show
+      </div>
+
+      <div ng-hide='3 + 4 == 5'>
+          3 + 4 isn't 5, don't hide
+      </div>
+
+      <div ng-hide='3 + 4 == 7'>
+        3 + 4 is 7, do hide
+      </div>
+
+    <h1>Sign Up page</h1>
+    	<input ng-model="signUp" type="password" maxlength="10"><br/>
+    	<span>Your password is {{signUp.length}} characters</span><br/>
+
+        <p ng-show="signUp.length < 6">Password is Invalid!</p>
+
+    	<button ng-show="signUp.length > 5">
+    		Sign Up!
+    	</button><br/>
+    	
+    	<h1>Sign Up page w/ Color</h1>
+    	   
+    		<input ng-class="signUp2.length <= 5 ? 'invalid' : 'valid'" color="red" ng-model="signUp2" type="password" maxlength="10"><br/>
+    		<span>Your password is {{signUp.length}} characters</span><br/>
+
+    	    <p ng-class="signUp2.length <= 5 ? 'invalid' : 'valid'" ng-show="signUp2.length < 6">Password is Invalid!</p>
+
+    		<button style="color:green;" ng-show="signUp2.length > 5">
+    			Sign Up!
+    		</button><br/>
+</body>
+</html>

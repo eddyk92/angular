@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="firstApp">
+	<head>
+		<title></title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	</head>
+	<body>
+<!-- 		<div ng=controller="MyFirstController">
+			<div ng-controller="MyFirstController">
+			  <h1>My name is: {{ name }}</h1>
+			  <input ng-model="name" type="text" placeholder="What is your name">
+			</div>
+		</div>
+		<div ng-favColor="">
+			
+		</div> -->
+
+		<div ng-controller="numCount">
+			<h3>The number is: {{number}}</h3>
+			<button ng-click="pickRandomNumber()">Pick Random Number</button>
+		</div>
+
+<!-- 		<div>
+			<h2>Word Reverser</h2>
+			<input ng-model="reverseString">
+			<h4>Your word is: {{reverseString}}</h4>
+			<button>Reverse!</button>
+		</div>
+
+		<div>
+			
+		</div> -->
+
+		
+		<script src="./myApp.js"></script>
+	</body>
+</html>
