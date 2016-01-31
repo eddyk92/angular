@@ -1,0 +1,9 @@
+html{
+	background: green;
+}
+
+.picBox{
+	margin-top: 50px;
+	border: 25px;
+	float-right: center;
+}
